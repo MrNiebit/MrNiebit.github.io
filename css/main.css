@@ -2262,7 +2262,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4e99ff;
+  background: #ff9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3512,6 +3512,12 @@ header.post-header {
   font-size: 13px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+* {
+  cursor: url("/images/default.cur"), auto;
+}
+:link {
+  cursor: url("/images/pointer.cur"), auto;
 }
 body {
   background-repeat: no-repeat;
