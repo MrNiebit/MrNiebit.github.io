@@ -1,3 +1,4 @@
+https://www.lacknb.cn/2019/10/14/mybatis注解开发（以及动态sql）/
 https://www.lacknb.cn/2019/10/11/Deepin安装aria2实现百度云高速下载/
 https://www.lacknb.cn/2019/10/10/mybatis单表的嵌套查询/
 https://www.lacknb.cn/2019/10/09/docker学习的入门/
@@ -14,7 +15,6 @@ https://www.lacknb.cn/2019/09/11/Git笔记/
 https://www.lacknb.cn/2019/09/06/Mybatis使用注解入门案例/
 https://www.lacknb.cn/2019/09/06/MybatisUtils工具类/
 https://www.lacknb.cn/2019/09/05/Mybatis一些细节详解-持续更新/
-https://www.lacknb.cn/2019/09/01/Untitled/
 https://www.lacknb.cn/2019/08/26/scrapy爬52古装网高清壁纸并下载/
 https://www.lacknb.cn/2019/08/20/ognl表达式和值栈/
 https://www.lacknb.cn/2019/08/17/Struts2的拦截器栈/
