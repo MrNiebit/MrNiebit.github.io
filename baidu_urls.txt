@@ -1,3 +1,4 @@
+https://www.lacknb.cn/2019/10/24/Spring的属性注入/
 https://www.lacknb.cn/2019/10/23/Untitled/
 https://www.lacknb.cn/2019/10/23/docker安装mysql/
 https://www.lacknb.cn/2019/10/14/mybatis注解开发（以及动态sql）/
