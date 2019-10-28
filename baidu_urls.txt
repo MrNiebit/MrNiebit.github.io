@@ -1,4 +1,5 @@
-https://www.lacknb.cn/2019/10/28/Untitled/
+https://www.lacknb.cn/2019/10/28/linux端口映射工具/
+https://www.lacknb.cn/2019/10/28/Oracle数据库例题/
 https://www.lacknb.cn/2019/10/26/Docker学习之二/
 https://www.lacknb.cn/2019/10/25/模拟电梯系统（java）/
 https://www.lacknb.cn/2019/10/24/Spring的属性注入/
