@@ -1,0 +1,3 @@
+// build time:Wed Nov 06 2019 15:47:35 GMT+0800 (CST)
+(function(){$.ajax({url:"http://66.lacknb.cn:9527/xiaodao",method:"GET",dataType:"jsonp",jsonpCallback:"xiaodao",success:function(a){var t=a.data;for(var e=0;e<t.length;e++){$("#xiaodao").append('<li> <a href="'+t[e].href+'" target="_blank">'+t[e].date+"--"+t[e].title+"</a>")}}});$.ajax({url:"http://66.lacknb.cn:9527/iqshw",method:"GET",dataType:"jsonp",jsonpCallback:"iqshw",success:function(a){var t=a.data;for(var e=0;e<t.length;e++){$("#iqshw").append('<li> <a href="'+t[e].href+'" target="_blank">'+t[e].date+"--"+t[e].title+"</a>")}}})})();
+//rebuild by neat </t.length;e++){$("#iqshw").append('<li></t.length;e++){$("#xiaodao").append('<li>
