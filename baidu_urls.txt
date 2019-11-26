@@ -1,3 +1,6 @@
+http://www.lacknb.cn/2019/11/26/SpringBoot相关知识/
+http://www.lacknb.cn/2019/11/26/在servlet中使用thymeleaf/
+http://www.lacknb.cn/2019/11/26/基于springboot对thymeleaf的使用/
 http://www.lacknb.cn/2019/11/21/MySQL-8-0安装与操作指南/
 http://www.lacknb.cn/2019/11/19/使用IDEA将ssm项目模块化/
 http://www.lacknb.cn/2019/11/15/pageHelper分页插件初体验/

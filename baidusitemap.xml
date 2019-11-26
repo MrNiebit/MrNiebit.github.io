@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.lacknb.cn/2019/11/26/SpringBoot%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2019-11-26</lastmod>
+  </url>  <url>
+    <loc>http://www.lacknb.cn/2019/11/26/%E5%9C%A8servlet%E4%B8%AD%E4%BD%BF%E7%94%A8thymeleaf/</loc>
+    <lastmod>2019-11-26</lastmod>
+  </url>  <url>
+    <loc>http://www.lacknb.cn/2019/11/26/%E5%9F%BA%E4%BA%8Espringboot%E5%AF%B9thymeleaf%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-11-26</lastmod>
+  </url>  <url>
     <loc>http://www.lacknb.cn/2019/11/19/%E4%BD%BF%E7%94%A8IDEA%E5%B0%86ssm%E9%A1%B9%E7%9B%AE%E6%A8%A1%E5%9D%97%E5%8C%96/</loc>
     <lastmod>2019-11-20</lastmod>
   </url>  <url>
