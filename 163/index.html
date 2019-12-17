@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>代码与我--模仿网易云热评</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            font-size: 12px;
+        }
+
+        .box {
+            margin: 60px auto;
+            width: 700px;
+            height: 50px;
+        }
+
+        .max {
+            margin: 0 auto;
+            width: 700px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .d-md-inline {
+            word-break: break-all;
+        }
+
+        .bottom {
+            margin: 0 auto;
+            width: 100px;
+            bottom: 0px;
+        }
+    </style>
+    <script>
+        function getData(id) {
+            $.ajax({
+                url: "http://66.lacknb.cn/test/api/comment",
+                method: "GET",
+                data: { "id": id },
+                dataType: "json",
+                success: function (datas) {
+                    $('.content').empty()
+                    if (datas.status == 'success' && datas.comments.length != 0) {
+                        var data = datas.comments
+                        for (var i = 0; i < data.length; i++) {
+                            $('.content').append('<hr><div class="comment col-md-12"><div class="top col-md-12 row"><div class="avatar col-md-1"><img src="' + data[i].avatarUrl + '"alt=""></div><span>&emsp;</span><div class="col-md-10"><a target="_blank" href="https://music.163.com/user/home?id=' + data[i].userId + '">' + data[i].nickname + ': &nbsp;</a><p class="d-md-inline">' + data[i].content + '</p></div></div><br><div class="col-md-12 row"><div class="time col-md-4"><span style="color: #989595;">' + data[i].time + '</span></div><div class="right col-md-4 text-md-right"><span>赞(' + data[i].likedCount + ')</span></div></div></div>')
+                        }
+                    } else {
+                        console.log(id)
+                        $('.content').append('<h2 style="color: red; text-align: center;">没有找到该歌曲, 请重试 ~ ~</h2>')
+                    }
+                },
+                error: function (errors) {
+                    console.log(errors)
+                }
+            })
+        }
+        getData(1391245250);
+
+
+        $(function () {
+
+            var ids = [1397659461, 534540498, 1330972472, 1382616408, 208902, 31445772, 26145111, 167876, 4875307, 1401924960, 33911725, 1370494291, 1306459970, 27694142, 35040810, 566436427, 1371094770, 1386522410, 308353, 18374823, 1385126398, 1387178379, 1353288660, 1388357890, 86464, 1369798757, 1351520305, 1379416556, 1365898499, 191171, 1334014687, 1332052986, 1327781623, 536841326, 461544312, 1302953360, 1306908061, 1363078221, 1365428235, 1347181386, 1356350562, 28481189, 1316921651, 1320570892, 461080452, 1357999883, 1344368486, 863233827, 1358803219, 560961488, 1302114856, 476513774, 28949013, 425724850, 1311345316, 1331819951, 558290126, 546723152, 1336871780, 1350364033, 532572369, 1313354324, 574928854, 566953433, 479422828, 448317566, 1343314651, 550453774, 29544731, 407679576, 1334270729, 1301572067, 562598081, 463352828, 516728102, 1338414233, 29401700, 1334270281, 541511427, 30431367, 509343394, 428391758, 86477, 30621618, 1332662300, 554242032, 25718007, 403710394, 210042, 458679625, 436668683, 5261521, 189323, 191048, 28959183, 488532353, 1318458131, 208958, 31421442, 109196, 478303470, 496370620, 504017347, 77099, 36024806, 4164331, 1299550532, 233974, 449818741, 519136840, 179884, 472021850, 569214126, 554191055, 274696, 479598964, 5260494, 466794339, 474938709, 515143305, 25657521, 477844082, 539941039, 514053886, 541217692, 186436, 461347998, 543607345, 522631413, 469426303, 516076896, 443242, 26599220]
+            var time = setInterval(function () {
+                getData(ids[Math.floor(Math.random() * 133)])
+            }, 10000);
+            $('#select').click(function () {
+                clearInterval(time)
+                getData($('#music').val())
+            });
+
+            $('#next').click(function () {
+                clearInterval(time);
+                getData(ids[Math.floor(Math.random() * 133)])
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="box">
+            <div class="row col-md-12">
+                <div class="col-sm-7">
+                    <input type="text" placeholder="网易云歌曲的id" class="form-control" id="music">
+                </div>
+                <div class="col-sm-5">
+                    <button id="select" class="btn btn-outline-primary">查 询</button>
+                    &emsp;<button id="next" class="btn btn-outline-primary">下一个</button>
+                </div>
+            </div>
+        </div>
+        <div class="max">
+            <div class="top">
+                <p><b>精彩评论</b></p>
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="bottom">
+        <a href="http://www.lacknb.cn" target="_blank">作者: 代码与我</a>
+    </div>
+    <hr>
+</body>
+
+
+
+
+<!-- <hr>
+<div class="comment col-md-12">
+    <div class="top col-md-12 row">
+        <div class="avatar col-md-1">
+            <img src="https://p1.music.126.net/jt6WePQbV0gSTa0ovJJcWA==/109951164530068083.jpg?param=50y50"
+                alt="">
+        </div>
+        <span>&emsp;</span>
+        <div class="col-md-10">
+            <a href="#">凄凄切切群群群群: &nbsp;</a>
+            <p class="d-md-inline">在春天错过 错过梦 错过远方 在夏天错过 错过热烈 错过绽放 猛然回首在初秋 我们拥抱在白雪皑皑的冬天 太多的来不及 就在犹豫 等待 踌躇中
+                成为了掩于唇齿的遗憾 不知 在身边的 带着成熟韵味的青青 可否能少一些来不及 直至海岸线的弧度无始无终</p>
+        </div>
+    </div>
+    <br>
+    <div class="col-md-12 row">
+        <div class="time col-md-4">
+            <span style="color: #989595;">2019年10月19日 15:05:46</span>
+        </div>
+        <div class="right col-md-4 text-md-right">
+            <span>赞(2227)</span>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+</html>
