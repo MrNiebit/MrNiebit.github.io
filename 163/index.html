@@ -61,7 +61,7 @@
                     if (datas.status == 'success' && datas.comments.length != 0) {
                         var data = datas.comments
                         for (var i = 0; i < data.length; i++) {
-                            $('.content').append('<hr><div class="comment col-md-12"><div class="top col-md-12 row"><div class="avatar col-md-1"><img src="' + data[i].avatarUrl + '"alt=""></div><span>&emsp;</span><div class="col-md-10"><a target="_blank" href="https://music.163.com/user/home?id=' + data[i].userId + '">' + data[i].nickname + ': &nbsp;</a><p class="d-md-inline">' + data[i].content + '</p></div></div><br><div class="col-md-12 row"><div class="time col-md-4"><span style="color: #989595;">' + data[i].time + '</span></div><div class="right col-md-4 text-md-right"><span>赞(' + data[i].likedCount + ')</span></div></div></div>')
+                            $('.content').append('<hr><div class="comment col-md-12"><div class="top col-md-12 row"><div class="avatar col-md-1"><img src="' + data[i].avatarUrl + '?param=50y50" alt=""></div><span>&emsp;</span><div class="col-md-10"><a target="_blank" href="https://music.163.com/user/home?id=' + data[i].userId + '">' + data[i].nickname + ': &nbsp;</a><p class="d-md-inline">' + data[i].content + '</p></div></div><br><div class="col-md-12 row"><div class="time col-md-4"><span style="color: #989595;">' + data[i].time + '</span></div><div class="right col-md-4 text-md-right"><span>赞(' + data[i].likedCount + ')</span></div></div></div>')
                         }
                     } else {
                         console.log(id)
