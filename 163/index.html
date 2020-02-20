@@ -98,7 +98,17 @@
             }, 10000);
             $('#select').click(function () {
                 clearInterval(time)
-                getData($('#music').val())
+                var strs = $('#music').val();
+                var id = 534540498;
+                if (strs.indexOf('http') != -1){
+                    id = strs.split('=')[1]
+                } else {
+                    id = strs
+                }
+                
+                
+                // console.log(id)
+                getData(id)
             });
 
             $('#next').click(function () {

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        var playUrl = 'http://v.mmifx.com/bili/?url='
+    
+        function getData(id){
+            $.ajax({
+                url: 'https://avalive.cn/ops-alive/webservice/bizLiveItemForWechat?id=' + id,
+                method: 'get',
+                type: 'json',
+                success: function(data){
+                    console.log(data)
+                    var datas = data.data
+                    var content = decodeURIComponent(datas.intro)
+                    var m3u8 = datas.baiduHLS
+                    var rmtp = datas.baiduRtmp
+                    var flv = datas.flvAddress
+                    var title = datas.pushPoolPushName
+                    $('#m3u8').val(m3u8)
+                    $('#m3u8Play').attr('href', playUrl + m3u8)
+                    $('#rmtp').val(rmtp)
+                    $('#rmtpPlay').attr('href', playUrl + rmtp)
+                    $('#flv').val(flv)
+                    $('#flvPlay').attr('href', playUrl + flv)
+                    $('#title').text(title)
+                    $('#imgCourse').html(content)
+                },
+                async: false
+            });
+
+            $.ajax({
+                url: 'https://avalive.cn/ops-alive/webservice/bizLiveRecordList?parentLive=' + id + '&PageSize=100000000&open=true&PageIndex=1',
+                method: 'get',
+                type: 'json',
+                success: function(datas){
+                    console.log(datas)
+                    var data = datas.data;
+                    $('#recordList').empty()
+                    for (var i = 0; i < data.length; i++){
+                        var name = data[i].name
+                        console.log(name)
+                        var videoUrl = data[i].videoUrl;
+                        $('#recordList').append('<li class="col-sm-12"><span>' + name + '</span> <a href="' + playUrl + videoUrl + '" target="_blank">回放</a></li>')
+                    }
+                    
+                },
+                async: false
+            })
+
+        }
+        $(function(){
+            // http://v.mmifx.com/bili/?url=
+            var gradeSix = '2c921ec56ff98a4f017000ce47a80d31';
+            var gradeSeven = '2c921ec56ff98a4f017000ce39fb0d2c';
+            var gradeEight = '2c921ec66ff9926c017000ce297f0d1f';
+            getData(gradeSix)
+            $('.t_ul li:first').css('background-color', 'red')
+            $('.t_ul li').click(function(){
+                $('.t_ul li').css('background-color', '#ccc')
+                $(this).css('background-color', 'red')
+            })
+
+            $("input").click(function() {
+                var copyText = $(this) //获取对象
+                copyText.select();//选择
+                document.execCommand("Copy");//执行复制
+        　　　　alert("复制成功！");
+            })
+
+        })
+    
+    </script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid red; */
+            list-style: none;
+            background-color: #ccc;
+
+        }
+        .t_ul {
+            margin: 10px auto;
+            /* width: 630px; */
+            height: 50px;
+        }
+        .t_ul li {
+            float: left; 
+            width: 200px;
+            height: 50px;
+            margin-left: 8px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid red;
+            margin-top: 5px;
+        }
+        .t_ul li:hover{
+            cursor: pointer;
+            background-color: red;
+        }
+        .bottom {
+            margin-top: 80px;
+        }
+
+        #recordList {
+            margin: 20px auto;
+        }
+
+        #recordList li {
+            text-align: center;
+            margin-top: 10px;
+            height: 35px;
+            line-height: 35px;
+            border: 1px solid black;
+        }
+
+        #recordList li:hover{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row col-sm-12">
+            <ul class="t_ul">
+                    <li onclick="getData('2c921ec56ff98a4f017000ce47a80d31')">六年级</li>
+
+                    <li onclick="getData('2c921ec56ff98a4f017000ce39fb0d2c')">七年级</li>
+
+                    <li onclick="getData('2c921ec66ff9926c017000ce297f0d1f')">八年级</li>
+
+            </ul>
+        </div>
+
+        <div class="bottom">
+
+            <div class="top row" style="margin-left: 30%;">
+                <h3 id="title"></h3> &emsp;
+                <h6 style="color: #000">点击网址进行复制</h6>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">m3u8</label>
+                <div class="col-sm-8">
+                  <input type="text" readonly class="form-control" id="m3u8">
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" id="m3u8Play" target="_blank">点击播放</a>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">rmtp</label>
+                <div class="col-sm-8">
+                  <input type="text" readonly class="form-control" id="rmtp">
+                </div>
+                <div class="col-sm-2">
+                        <a href="#" id="rmtpPlay" target="_blank">点击播放</a>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">flv</label>
+                <div class="col-sm-8">
+                  <input type="text" readonly class="form-control" id="flv">
+                </div>
+                <div class="col-sm-2">
+                        <a href="#" id="flvPlay" target="_blank">点击播放</a>
+                    </div>
+            </div>
+
+            <div class="top row" style="margin-left: 30%;">
+                <h3>回放视频</h3>
+            </div>
+
+            <div class="row col-sm-12">
+                    <ul class="row col-sm-12" id="recordList">
+                    </ul>
+                </div>
+
+            <div class="row" id="imgCourse">
+
+            </div>
+        </div>
+    </div>   
+</body>
+</html>

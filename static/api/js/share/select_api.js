@@ -1,3 +1,3 @@
-// build time:Fri Feb 14 2020 12:59:45 GMT+0800 (CST)
+// build time:Thu Feb 20 2020 19:39:57 GMT+0800 (CST)
 window._bd_share_main.F.module("share/select_api",function(e,a,n){var t=e("base/tangram").T,i=e("base/class").Class,s=e("component/comm_tools"),o=e("share/api_base");a.Api=i.create(function(e){var a=this;a._init=function(){var e=a.getView();e.render(),e.init()},a._processAction=function(e){return{data:{type:"select"}}},a._distory=function(){}},o.ApiBase)});
 //rebuild by neat 
