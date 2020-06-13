@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lacknb.cn/about/index.html</loc>
+    
+    <lastmod>2020-06-13T07:50:39.119Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lacknb.cn/2019/12/19/easy/</loc>
     
     <lastmod>2019-12-19T15:47:42.661Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.lacknb.cn/2019/12/17/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7%E5%92%8CCron%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     
     <lastmod>2019-12-17T07:18:31.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lacknb.cn/about/index.html</loc>
-    
-    <lastmod>2019-11-26T03:34:58.063Z</lastmod>
     
   </url>
   
