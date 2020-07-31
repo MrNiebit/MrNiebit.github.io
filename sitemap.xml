@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lacknb.cn/one/index.html</loc>
+    
+    <lastmod>2020-07-31T05:24:25.948Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lacknb.cn/about/index.html</loc>
     
     <lastmod>2020-06-13T07:50:39.119Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>http://www.lacknb.cn/2019/11/02/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</loc>
     
     <lastmod>2019-11-09T05:18:32.763Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lacknb.cn/one/index.html</loc>
-    
-    <lastmod>2019-11-08T15:24:12.406Z</lastmod>
     
   </url>
   
