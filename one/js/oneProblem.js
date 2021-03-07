@@ -1,3 +1,32 @@
-// build time:Fri Jul 31 2020 13:25:12 GMT+0800 (GMT+08:00)
-(function(){var a;$.ajax({url:"http://api.lacknb.cn/api/time",method:"GET",dataType:"json",success:function(t){a=t.t},async:false});$.ajax({url:"http://api.lacknb.cn/api/one",data:{token:(a/9527).toString(16).split(".")[0],type:"jsonp"},method:"GET",dataType:"jsonp",jsonpCallback:"one",success:function(a){var t=a.datas;console.log(t);for(var n=0;n<t.length;n++){$("#max").append('<div class="img"><img src="/one/js/oneProblem/'+t[n].img+'" alt="摄影"><div class="text_container"><div class="text">'+t[n].text+"</div></div><br><br>")}},error:function(a){console.log(4)},async:false})})();
-//rebuild by neat </t.length;n++){$("#max").append('<div>
+(function(){
+    // 当同一方法中有多个ajax时, 要使用顺序执行, 默认是异步执行. asyns: false;
+    var now;
+    $.ajax({
+        url: "http://api.lacknb.cn/api/time",
+        method: "GET",
+        dataType: "json",
+        success: function(datas){
+            now = datas.t
+        },
+        async: false
+    });
+    $.ajax({
+        url: "http://api.lacknb.cn/api/one",
+        data: {"token": (now / 9527).toString(16).split(".")[0], "type": "jsonp"}, 
+        method: "GET",
+        dataType: "jsonp",
+        jsonpCallback: "one",
+        success: function(data){
+            var datas = data.datas
+            console.log(datas);
+            for (var i = 0; i < datas.length; i++){
+                $('#max').append('<div class="img"><img src="/one/js/oneProblem/' + datas[i].img +'" alt="摄影"></div><div class="text_container"><div class="text">' + datas[i].text + '</div></div><br><br>')
+            }
+        },
+        error: function(error){
+            console.log(4)
+        },
+        async: false
+    });
+
+}());
