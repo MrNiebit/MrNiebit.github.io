@@ -20,7 +20,7 @@
             var datas = data.datas
             console.log(datas);
             for (var i = 0; i < datas.length; i++){
-                $('#max').append('<div class="img"><img src="' + datas[i].img +'" alt="摄影"></div><div class="text_container"><div class="text">' + datas[i].text + '</div></div><br><br>')
+                $('#max').append('<div class="img"><img src="/one/js/oneProblem/' + datas[i].img +'" alt="摄影"></div><div class="text_container"><div class="text">' + datas[i].text + '</div></div><br><br>')
             }
         },
         error: function(error){
